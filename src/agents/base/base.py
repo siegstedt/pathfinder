@@ -38,3 +38,7 @@ class BaseAgent:
             schema=return_class, include_raw=include_raw, method=method
         )
         return llm
+
+    def get_llm(self, model="gpt-4o", temperature=0):
+        llm = ChatOpenAI(temperature=temperature, model_name=model)
+        return llm

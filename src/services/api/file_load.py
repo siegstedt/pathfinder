@@ -5,10 +5,10 @@ class FileLoader:
     def __init__(self) -> None:
         self.local_path = "src/data/lastenheft.pdf"
 
-    def get_file(self):
-        return self._load_local()
+    def get_file(self, path=False):
+        return self._load_file(path)
 
-    def _load_local(self, pdf_path=False):
+    def _load_file(self, pdf_path):
         if not pdf_path:
             pdf_path = self.local_path
         pdf_document = fitz.open(pdf_path)
